@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-buttons start>
+      <button ion-button icon-only color (click)="Add()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>myshop</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding #item *ngFor="let iteme of products">
+      <ion-item>
+        <h2>รหัสสินค้า : {{iteme.product_id}}</h2>
+        <h2>ประเภทสินค้า : {{iteme.type_name}}</h2>
+        <h2>ชื่อสินค้า : {{iteme.product_name}}</h2>
+        <h2>รายละเอียดสินค้า : {{iteme.product_detail}}</h2>
+        <h2>จำนวนสินค้า: {{iteme.product_num}}</h2>
+        <h2>ราคา {{iteme.price}}</h2>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button icon-start color="secondary" (click)="btupdate(iteme.product_id
+        ,iteme.type_id
+        ,iteme.type_name
+        ,iteme.product_name
+        ,iteme.product_detail
+        ,iteme.product_num
+        ,iteme.price
+        )">
+          <ion-icon name="create"></ion-icon>&nbsp; แก้ไข
+        </button>
+
+        <button ion-button icon-start color="danger" (click)="btdelete(iteme.product_id)">
+          <ion-icon name="ios-trash-outline"></ion-icon>&nbsp; ลบ
+        </button>
+
+
+
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

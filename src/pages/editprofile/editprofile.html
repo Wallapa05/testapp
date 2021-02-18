@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>editprofile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>ชื่อจริง</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>นามสกุล</ion-label>
+      <ion-textarea type="text" [(ngModel)]="last"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>เบอร์โทร</ion-label>
+      <ion-textarea type="text"  maxlength="10"[(ngModel)]="phone"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>อีเมล์</ion-label>
+      <ion-textarea type="text" [(ngModel)]="email"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>ที่อยู่</ion-label>
+      <ion-textarea type="text" [(ngModel)]="address"></ion-textarea>
+    </ion-item>
+
+   
+  </ion-list>
+  <button ion-button full (click)="Update(name,last,phone,email,address)">
+   บันทึกข้อมูล
+  </button>
+
+</ion-content>
