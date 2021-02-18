@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>editproducts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>ประเภทสินค้า</ion-label>
+    <ion-select [(ngModel)]="type_id">
+      <ion-option value="1">อาหารสำเร็จรูป</ion-option>
+      <ion-option value="2">เครื่องแต่งกาย</ion-option>
+      <ion-option value="3">สิ่งทอและเครื่องนุ่งห่ม</ion-option>
+      <ion-option value="4">ผลิตภัณฑ์สมุนไพร</ion-option>
+      <ion-option value="5">เครื่องดื่ม</ion-option>
+      <ion-option value="6">ของที่ระลึก</ion-option>
+      
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>ชื่อสินค้า</ion-label>
+    <ion-textarea type="text" [(ngModel)]="product_name"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>รายละเอียดสินค้า</ion-label>
+     <ion-textarea type="text" [(ngModel)]="product_detail "></ion-textarea>
+  </ion-item>
+
+ 
+  <ion-item>
+    <ion-label stacked>จำนวน</ion-label>
+     <ion-textarea type="number" [(ngModel)]="product_num "></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>ราคา</ion-label>
+     <ion-input type="number" [(ngModel)]="price "></ion-input>
+  </ion-item>
+  <button ion-button full (click)="Update(product_id,type_id,product_name,product_detail,product_num,price)">
+    บันทึกข้อมูล
+   </button>
+</ion-content>
